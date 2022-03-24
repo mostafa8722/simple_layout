@@ -30,19 +30,39 @@ class CounterScreen extends StatefulWidget {
           ],
         ),
       ),
-      floatingActionButton:
-      new FloatingActionButton(
-          child : new Icon(Icons.add),
+      floatingActionButton:new Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          new FloatingActionButton(
+              child : new Icon(Icons.add),
 
-          onPressed:(){
+              onPressed:(){
 
-            setState((){
-              _counter++;
-            });
+                setState((){
+                  _counter++;
+                });
 
-          }
+              }
+          ),
+
+
+
+          new FloatingActionButton(
+              child : new Icon(Icons.minimize),
+
+              onPressed:(){
+
+
+                if(_counter>0)
+                setState((){
+                  _counter--;
+                });
+
+              }
+          )
+
+        ],
       )
-
 
       );
 
